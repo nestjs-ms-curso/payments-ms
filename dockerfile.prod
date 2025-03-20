@@ -1,4 +1,4 @@
-#Stage Dep
+#Stage: Dep
 FROM node:21-alpine3.19 as deps
 
 WORKDIR /usr/src/app
