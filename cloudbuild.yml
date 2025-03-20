@@ -1,0 +1,20 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "northamerica-northeast1-docker.pkg.dev/curso-nestjs-microservicios/curso-nestjs-ms-image-registry/payments-ms",
+        "-f",
+        "dockerfile.prod",
+        "--platform=linux/amd64",
+        ".",
+      ]
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "push",
+        "northamerica-northeast1-docker.pkg.dev/curso-nestjs-microservicios/curso-nestjs-ms-image-registry/payments-ms",
+      ]
+options:
+  logging: CLOUD_LOGGING_ONLY      
